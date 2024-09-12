@@ -1,12 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Empresa
 {
-    internal class Funcionario
+    public class Funcionario
     {
+        public string Nome { get; set; }
+        public int HorasTrabalhadas { get; set; }
+        public double ValorHora { get; set; }
+
+        public Funcionario(string nome, int horasTrabalhadas, double valorHora)
+        {
+            Nome = nome;
+            HorasTrabalhadas = horasTrabalhadas;
+            ValorHora = valorHora;
+        }
+
+        public virtual double CalcularPagamento()
+        {
+            return HorasTrabalhadas * ValorHora;
+        }
     }
 }
